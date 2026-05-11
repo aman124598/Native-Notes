@@ -1,3 +1,4 @@
+import { useAppTheme } from '@/context/ThemeContext';
 import Feather from '@expo/vector-icons/Feather';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useLocalSearchParams, useRouter } from 'expo-router';
@@ -15,7 +16,6 @@ import {
   View
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useAppTheme } from '@/context/ThemeContext';
 
 export default function CreateNotes() {
   const params = useLocalSearchParams();

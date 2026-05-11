@@ -1,7 +1,7 @@
+import { ThemeProvider, useAppTheme } from '@/context/ThemeContext';
 import { DarkTheme, DefaultTheme, ThemeProvider as NavigationThemeProvider } from '@react-navigation/native';
 import { Stack } from 'expo-router';
 import React from 'react';
-import { ThemeProvider, useAppTheme } from '@/context/ThemeContext';
 
 export default function RootLayout() {
   return (
