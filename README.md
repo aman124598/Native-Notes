@@ -1,56 +1,42 @@
-# Welcome to your Expo app 👋
+# Native Notes App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A beautifully designed, responsive React Native (Expo) notes application. Built with a focus on immersive UI, seamless local persistence, and fluid navigation.
 
-## Get started
+## Features
 
-1. Install dependencies
+- **Immersive UI:** A unified abstract header using ImageBackground and custom styling across all screens.
+- **Custom Color Palette:** Beautiful, responsive light and dark themes featuring our signature Accent Blue (#4E33FF) and Accent Yellow (#FFD633).
+- **Floating Action Button (FAB):** Quick and easy one-tap access to note creation straight from the clean list view.
+- **Persistent Data:** Leverages @react-native-async-storage/async-storage so you never lose a thought.
+- **Responsive Layout:** Dynamic horizontal padding that adapts to tablet and larger screen sizes organically.
+- **Routing:** Powered by Expo Router using a seamless Stack-based navigation flow, providing a true native feel without the clutter of tab bars.
 
-   ```bash
+## Getting Started
+
+1. **Install Dependencies:**
+   ``bash
    npm install
-   ```
+   ``
 
-2. Start the app
-
-   ```bash
+2. **Start the Development Server:**
+   ``bash
    npx expo start
-   ```
+   ``
 
-In the output, you'll find options to open the app in a
+Open the app using Expo Go on your physical device, or run it on an iOS Simulator or Android Emulator.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Project Structure
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Developed without the overhead of unused boilerplate, ensuring a clean and focused codebase:
 
-## Get a fresh project
+- /src/app/index.tsx - The home screen displaying the grid of notes and the FAB.
+- /src/app/create_notes.tsx - The editor screen to write, edit, and save notes.
+- /src/app/view_note.tsx - The read-only full-screen view for your thoughts.
+- /src/constants/theme.ts - Centralized aesthetic values and dark/light color configuration.
 
-When you're ready, run:
+## Technologies Used
 
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-### Other setup steps
-
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- React Native
+- Expo & Expo Router
+- React Native Async Storage
+- Feather Icons
