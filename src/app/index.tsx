@@ -4,6 +4,7 @@ import { useFocusEffect, useRouter } from 'expo-router';
 import React, { useCallback, useState } from 'react';
 import { FlatList, ImageBackground, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useAppTheme } from '@/context/ThemeContext';
 
 const INITIAL_DUMMY_NOTES = [
   {
@@ -22,8 +23,8 @@ const INITIAL_DUMMY_NOTES = [
 
 export default function index() {
   const router = useRouter();
+  const { isDarkMode, toggleTheme } = useAppTheme();
   const [searchQuery, setSearchQuery] = useState('');
-  const [isDarkMode, setIsDarkMode] = useState(true);
   const [notes, setNotes] = useState<{ id: string; title: string; snippet: string; date: string }[]>([]);
 
   useFocusEffect(
@@ -34,7 +35,6 @@ export default function index() {
           if (savedNotes) {
             setNotes(JSON.parse(savedNotes));
           } else {
-            // Set initial dummy notes if storage is empty
             setNotes(INITIAL_DUMMY_NOTES);
             await AsyncStorage.setItem('saved_notes', JSON.stringify(INITIAL_DUMMY_NOTES));
           }
@@ -47,7 +47,6 @@ export default function index() {
     }, [])
   );
 
-  // Dynamic theme colors utilizing the attached palette
   const theme = {
     background: isDarkMode ? '#151718' : '#f8f9fa',
     text: isDarkMode ? '#ffffff' : '#151718',
@@ -79,7 +78,7 @@ export default function index() {
             <Text style={styles.h_text}>Notes</Text>
 
             <Pressable
-              onPress={() => setIsDarkMode(!isDarkMode)}
+              onPress={toggleTheme}
               style={[styles.themeToggle, { backgroundColor: theme.accentBlue }]}
             >
               <Feather name={isDarkMode ? 'sun' : 'moon'} size={20} color={theme.icon} />

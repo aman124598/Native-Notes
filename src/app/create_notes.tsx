@@ -11,11 +11,11 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  useColorScheme,
   useWindowDimensions,
   View
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useAppTheme } from '@/context/ThemeContext';
 
 export default function CreateNotes() {
   const params = useLocalSearchParams();
@@ -24,7 +24,7 @@ export default function CreateNotes() {
   const [title, setTitle] = useState(params.title ? String(params.title) : '');
   const [note, setNote] = useState(params.snippet ? String(params.snippet) : '');
 
-  const colorScheme = useColorScheme();
+  const { isDarkMode } = useAppTheme();
   const { width } = useWindowDimensions();
 
   const handleSave = async () => {
@@ -64,7 +64,6 @@ export default function CreateNotes() {
     }
   };
 
-  const isDarkMode = colorScheme === 'dark';
   const isTablet = width >= 768;
 
   const themeColors = {

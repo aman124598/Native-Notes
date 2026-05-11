@@ -1,16 +1,16 @@
 import Feather from '@expo/vector-icons/Feather';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import React from 'react';
-import { ImageBackground, Pressable, ScrollView, StyleSheet, Text, useColorScheme, useWindowDimensions, View } from 'react-native';
+import { ImageBackground, Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useAppTheme } from '@/context/ThemeContext';
 
 export default function ViewNote() {
   const params = useLocalSearchParams();
   const router = useRouter();
-  const colorScheme = useColorScheme();
+  const { isDarkMode } = useAppTheme();
   const { width } = useWindowDimensions();
 
-  const isDarkMode = colorScheme === 'dark';
   const isTablet = width >= 768;
 
   const themeColors = {
